@@ -16,6 +16,13 @@ namespace ConssoleApp228
                 return "698838515:AAGfGg_74AGp4td9tNNIQw_GOuHjfUJCSm8";
             }
         }
+        private static long MyId
+        {
+            get
+            {
+                return 553588923;
+            }
+        }
         private static TelegramBotClient bot = null;
 
         private static void Main(string[] args)
@@ -64,8 +71,8 @@ namespace ConssoleApp228
                         ikb.Add(ikb1);
 
                         InlineKeyboardButton ikb2 = new InlineKeyboardButton();
-                        ikb2.Text = "637 m3m35";
-                        ikb2.CallbackData = "/get_memes";
+                        ikb2.Text = "637 c4yhd73k";
+                        ikb2.CallbackData = "/get_sound";
                         ikb.Add(ikb2);
 
                         InlineKeyboardButton ikb3 = new InlineKeyboardButton();
@@ -89,6 +96,16 @@ namespace ConssoleApp228
                             @"https://iknowyourmeme.files.wordpress.com/2016/04/happy-sad-frog-05.jpg",
                             "d0 y0u r34l3 w4n7 70 pr3p4r3 fr06?", replyMarkup: rkm);
                         break;
+                    case "/get_buthurt":
+                        await bot.SendPhotoAsync(e.CallbackQuery.Message.Chat.Id,
+                            @"https://srv2.imgonline.com.ua/result_img/imgonline-com-ua-GIF-Animation-jVvad62I6U3j8.gif",
+                            "");
+                        break;
+                    case "/get_sound":
+                        await bot.SendVoiceAsync(e.CallbackQuery.Message.Chat.Id,
+                            @"http://supermario.org.ua/wp-content/uploads/2010/07/smb-overworld.mp3",
+                            "");
+                        break;
                 }
             }
             catch (Exception ex)
@@ -101,6 +118,7 @@ namespace ConssoleApp228
         {
             try
             {
+                Console.WriteLine(e.Message.Chat.Id);
                 if (e.Message.Text != null)
                 {
                     if (e.Message.Text[0] == '/')
@@ -119,24 +137,25 @@ namespace ConssoleApp228
         {
             try
             {
-                switch (e.Message.Text.ToLower())
-                {
-                    case "pr3p4r3 fr06 15 600d":
-                        await bot.SendPhotoAsync(e.Message.Chat.Id,
-                            @"https://cs8.pikabu.ru/images/big_size_comm/2016-08_6/1472406927198059454.png",
-                            "fr06 15 5ucc35ful7 pr3p4r3d!");
-                        break;
-                    case "pr3p4r3 fr06 15 b4d":
-                        await bot.SendPhotoAsync(e.Message.Chat.Id,
-                            @"https://vse-frazi.ru/wp-content/uploads/2017/03/%D0%BB%D1%8F%D0%B3%D1%83%D1%88%D0%BA%D0%B0-%D0%BC%D0%B5%D0%BC-15.gif",
-                            "fr06 15 7h4nk5 f0r y0u!");
-                        break;
-                    case "<3":
-                        await bot.SendPhotoAsync(e.Message.Chat.Id,
-                            @"https://avatanplus.com/files/resources/mid/58f5134817a4715b7d5351a1.png");
-                        break;
+                await bot.SendTextMessageAsync(MyId, e.Message.Text.ToLower());
+                //switch (e.Message.Text.ToLower())
+                //{
+                //    //case "pr3p4r3 fr06 15 600d":
+                //    //    await bot.SendPhotoAsync(e.Message.Chat.Id,
+                //    //        @"https://cs8.pikabu.ru/images/big_size_comm/2016-08_6/1472406927198059454.png",
+                //    //        "fr06 15 5ucc35ful7 pr3p4r3d!");
+                //    //    break;
+                //    //case "pr3p4r3 fr06 15 b4d":
+                //    //    await bot.SendPhotoAsync(e.Message.Chat.Id,
+                //    //        @"https://vse-frazi.ru/wp-content/uploads/2017/03/%D0%BB%D1%8F%D0%B3%D1%83%D1%88%D0%BA%D0%B0-%D0%BC%D0%B5%D0%BC-15.gif",
+                //    //        "fr06 15 7h4nk5 f0r y0u!");
+                //    //    break;
+                //    //case "<3":
+                //    //    await bot.SendPhotoAsync(e.Message.Chat.Id,
+                //    //        @"https://avatanplus.com/files/resources/mid/58f5134817a4715b7d5351a1.png");
+                //    //    break;
 
-                }
+                //}
             }
             catch (Exception ex)
             {
@@ -170,14 +189,18 @@ namespace ConssoleApp228
                         ikb.Add(ikb1);
 
                         InlineKeyboardButton ikb2 = new InlineKeyboardButton();
-                        ikb2.Text = "637 m3m35";
-                        ikb2.CallbackData = "/get_memes";
+                        ikb2.Text = "637 c4yhd73k";
+                        ikb2.CallbackData = "/get_sound";
                         ikb.Add(ikb2);
 
                         InlineKeyboardButton ikb3 = new InlineKeyboardButton();
                         ikb3.Text = "637 bu7hur7";
                         ikb3.CallbackData = "/get_buthurt";
                         ikb.Add(ikb3);
+
+                        InlineKeyboardButton ikb4 = new InlineKeyboardButton();
+                        ikb4.Text = "4a4a4a444aaaa444!";
+                        ikb4.CallbackData = "/aaa";
 
                         InlineKeyboardMarkup ikm = new InlineKeyboardMarkup(ikb);
 
